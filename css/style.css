@@ -1,0 +1,166 @@
+/* ========== ESTILO GLOBAL ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+    height: 100%; /* ocupar 100% da altura da tela */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* garante que ocupe a tela inteira */
+    background-color: #DCE0E6; /* cinza claro */
+    color: #1F1F20; /* quase preto */
+    line-height: 1.6;
+}
+
+/* Conteúdo principal expande */
+main {
+    flex: 1;
+}
+
+/* ========== CABEÇALHO ========== */
+header {
+    background: #1F1F20;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #567EBB; /* azul médio */
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #2B4C7E; /* azul escuro */
+}
+
+/* ========== CONTEÚDO PRINCIPAL ========== */
+section {
+    padding: 2rem;
+}
+
+/* PÁGINA INICIAL: LISTA DE NOTÍCIAS */
+.destaques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin: 1rem;
+    color: #2B4C7E;
+}
+
+.card p {
+    margin: 0 1rem 1rem;
+    font-size: 0.95rem;
+    color: #606D80; /* cinza azulado */
+}
+
+.card a {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background: #567EBB; /* azul médio */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.card a:hover {
+    background: #2B4C7E; /* azul escuro */
+}
+
+/* PÁGINAS DE NOTÍCIA */
+.noticia {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.noticia h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #2B4C7E;
+}
+
+.noticia img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.noticia p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    color: #1F1F20;
+}
+
+.noticia a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #1F1F20;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.noticia a:hover {
+    background: #606D80;
+}
+
+/* ========== RODAPÉ ========== */
+footer {
+    background: #1F1F20;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
