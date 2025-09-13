@@ -1,165 +1,143 @@
 /* ====== ESTILO GLOBAL ====== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0; /* zera margens */
+    padding: 0; /* zera padding */
+    box-sizing: border-box; /* inclui bordas no tamanho */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* fonte padrão */
 }
 
-html, body {
-    height: 100%;
-}
+html, body { height: 100%; } /* altura total tela */
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #DCE0E6;
-    color: #1F1F20;
-    line-height: 1.6;
+    display: flex; /* flex container vertical */
+    flex-direction: column; /* empilha elementos */
+    min-height: 100vh; /* ocupa tela toda */
+    background-color: #DCE0E6; /* fundo cinza claro */
+    color: #1F1F20; /* cor texto padrão */
+    line-height: 1.6; /* espaçamento linhas */
 }
 
-main { flex: 1; }
+main { flex: 1; } /* expande conteúdo principal */
 
 /* ====== CABEÇALHO ====== */
 header {
-    background: #1F1F20;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background: #1F1F20; /* fundo escuro */
+    color: #fff; /* texto branco */
+    padding: 1rem 2rem; /* espaçamento interno */
+    display: flex; /* flex horizontal */
+    align-items: center; /* vertical centralizado */
+    justify-content: space-between; /* espaço entre itens */
 }
 
-header h1 { font-size: 1.8rem; color: #567EBB; }
+header h1 { font-size: 1.8rem; color: #567EBB; } /* título azul médio */
 
 header nav a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 1.5rem;
-    font-weight: bold;
-    transition: color 0.3s;
+    color: #fff; /* links brancos */
+    text-decoration: none; /* sem sublinhado */
+    margin-left: 1.5rem; /* espaço entre links */
+    font-weight: bold; /* negrito */
+    transition: color 0.3s; /* efeito transição */
 }
 
-header nav a:hover { color: #2B4C7E; }
+header nav a:hover { color: #2B4C7E; } /* cor hover */
 
 /* ====== INTRO ====== */
-.intro { text-align: center; margin-bottom: 2rem; }
-.subtitulo { text-align: center; margin-top: 1rem; }
+.intro { text-align: center; margin-bottom: 2rem; } /* intro centralizada */
+.subtitulo { text-align: center; margin-top: 1rem; } /* subtítulo centralizado */
 
 /* ====== DESTAQUES ====== */
 .destaques {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+    display: grid; /* grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* colunas adaptáveis */
+    gap: 1.5rem; /* espaço entre cards */
+    margin-top: 1rem; /* margem topo */
 }
 
 .destaques section {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    padding: 1rem;
-    text-align: center;
+    background: #fff; /* fundo branco */
+    border-radius: 8px; /* bordas arredondadas */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* sombra leve */
+    padding: 1rem; /* espaçamento interno */
+    text-align: center; /* texto centralizado */
 }
 
-.destaques h3 { font-size: 1.2rem; margin: 1rem 0; color: #2B4C7E; }
-.destaques p { font-size: 0.95rem; color: #606D80; margin-bottom: 1rem; }
+.destaques h3 { font-size: 1.2rem; margin: 1rem 0; color: #2B4C7E; } /* título azul */
+.destaques p { font-size: 0.95rem; color: #606D80; margin-bottom: 1rem; } /* texto cinza */
 .destaques a {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background: #567EBB;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    transition: background 0.3s;
+    display: inline-block; /* botão inline */
+    padding: 0.5rem 1rem; /* espaçamento botão */
+    background: #567EBB; /* fundo azul médio */
+    color: #fff; /* texto branco */
+    text-decoration: none; /* sem sublinhado */
+    border-radius: 5px; /* borda arredondada */
+    font-size: 0.9rem; /* tamanho texto */
+    transition: background 0.3s; /* animação hover */
 }
 
-.destaques a:hover { background: #2B4C7E; }
+.destaques a:hover { background: #2B4C7E; } /* hover azul escuro */
 
 /* ====== CARROSSEL ====== */
 .carrossel {
-    width: 90%;
-    max-width: 600px;
-    margin: 2rem auto;
-    position: relative;
-    overflow: hidden;
+    width: 90%; /* largura container */
+    max-width: 600px; /* máximo 600px */
+    margin: 2rem auto; /* centralizado vertical/horizontal */
+    position: relative; /* posição relativa */
+    overflow: hidden; /* esconde excesso */
 }
 
 .slide {
-    width: 100%;
-    display: none;
-    border-radius: 12px;
+    width: 100%; /* ocupa 100% */
+    display: none; /* invisível */
+    border-radius: 12px; /* cantos arredondados */
 }
 
-.slide.ativo { display: block; }
+.slide.ativo { display: block; } /* slide visível */
 
-/* ====== IMAGENS DA PÁGINA INICIAL ====== */
+/* ====== IMAGENS INICIAIS ====== */
 #IMGIA1, #IMGGAMES1, #IMGCIBER1 {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
-    object-fit: cover;
-    display: block;
-    margin: 10px auto;
-    border-radius: 12px;
+    width: 90%; /* largura 90% */
+    max-width: 400px; /* máximo 400px */
+    height: auto; /* altura proporcional */
+    object-fit: cover; /* corta proporcional */
+    display: block; /* block element */
+    margin: 10px auto; /* centralizado horizontal */
+    border-radius: 12px; /* bordas arredondadas */
 }
 
 /* ====== PÁGINAS DE NOTÍCIA ====== */
 .noticia {
-    max-width: 900px;
-    margin: auto;
-    background: #fff;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    max-width: 900px; /* largura máxima */
+    margin: auto; /* centralizado */
+    background: #fff; /* fundo branco */
+    padding: 2rem; /* espaçamento interno */
+    border-radius: 8px; /* borda arredondada */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* sombra leve */
     text-align: center; /* centraliza conteúdo */
 }
 
-.noticia h1 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    color: #2B4C7E;
-}
-
+.noticia h1 { font-size: 1.8rem; margin-bottom: 1rem; color: #2B4C7E; } /* título azul */
 .noticia img {
-    width: 80%;        /* aumenta um pouco */
-    max-width: 550px;  /* aumenta limite máximo */
-    height: 300px;     /* altura retangular um pouco maior */
-    object-fit: cover;  /* mantém proporção cortando apenas o excesso */
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto; /* centraliza a imagem */
+    width: 80%; max-width: 550px; height: 300px; /* tamanho imagem */
+    object-fit: cover; border-radius: 8px; margin-bottom: 1rem;
+    display: block; margin-left: auto; margin-right: auto; /* centraliza imagem */
 }
 
-.noticia p {
-    margin-bottom: 1rem;
-    text-align: justify;
-    color: #1F1F20;
-}
-
+.noticia p { margin-bottom: 1rem; text-align: justify; color: #1F1F20; } /* parágrafo padrão */
 .noticia a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: #1F1F20;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    transition: background 0.3s;
-}
+    display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem;
+    background: #1F1F20; color: #fff; text-decoration: none;
+    border-radius: 5px; font-size: 0.9rem; transition: background 0.3s;
+} /* botão padrão */
+.noticia a:hover { background: #606D80; } /* hover botão */
 
-.noticia a:hover { background: #606D80; }
+/* ====== BOTÃO LEIA MAIS ====== */
+.leiamais-btn {
+    display: inline-block; margin: 1rem 0; padding: 0.5rem 1rem;
+    background: #567EBB; color: #fff; border-radius: 5px;
+    text-decoration: none; font-size: 0.9rem; cursor: pointer;
+    transition: background 0.3s;
+} /* botão ler mais */
+.leiamais-btn:hover { background: #2B4C7E; } /* hover ler mais */
 
 /* ====== RODAPÉ ====== */
-footer {
-    background: #1F1F20;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    font-size: 0.9rem;
-}
+footer { background: #1F1F20; color: #fff; text-align: center; padding: 1rem; font-size: 0.9rem; } /* rodapé */
