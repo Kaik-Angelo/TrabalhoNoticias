@@ -1,117 +1,112 @@
 /* ========== ESTILO GLOBAL ========== */
-* {
+* { /* zera margens e padding e define box-sizing */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html, body {
-    height: 100%; /* ocupar 100% da altura da tela */
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* garante que ocupe a tela inteira */
+body { /* fundo, texto padrão e fonte */
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* fonte padrão */
     background-color: #DCE0E6; /* cinza claro */
     color: #1F1F20; /* quase preto */
-    line-height: 1.6;
+    line-height: 1.6; /* espaçamento do texto */
 }
 
-/* Conteúdo principal expande */
-main {
-    flex: 1;
-}
-
-/* ========== CABEÇALHO ========== */
-header {
-    background: #1F1F20;
-    color: #fff;
+/*     CABEÇALHO        */
+header { /* barra do topo */
+    background: #1F1F20; /* preto */
+    color: #fff; /* letras brancas */
     padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* itens lado a lado */
+    align-items: center; /* centraliza vertical */
+    justify-content: space-between; /* separa título e links */
 }
 
-header h1 {
+header h1 { /* título principal */
     font-size: 1.8rem;
     color: #567EBB; /* azul médio */
 }
-
-header nav a {
+.subtitulo{
+     text-align: center;
+}
+header nav a { /* links do menu */
     color: #fff;
-    text-decoration: none;
+    text-decoration: none; /* tira sublinhado */
     margin-left: 1.5rem;
     font-weight: bold;
-    transition: color 0.3s;
-}
-
-header nav a:hover {
-    color: #2B4C7E; /* azul escuro */
 }
 
 /* ========== CONTEÚDO PRINCIPAL ========== */
-section {
-    padding: 2rem;
-}
+section { padding: 2rem; } /* espaçamento interno */
 
-/* PÁGINA INICIAL: LISTA DE NOTÍCIAS */
-.destaques {
+/* GRID DESTAQUES (notícias iniciais) */
+.destaques { /* container de destaques */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* colunas adaptáveis */
+    gap: 1.5rem; /* espaço entre blocos */
     margin-top: 1rem;
 }
 
-.card {
+.destaques section { /* cada bloco de notícia */
     background: #fff;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transition: transform 0.2s;
+    padding: 1rem;
+    text-align: center;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-}
-
-.card h2 {
+.destaques h3 { /* título das notícias */
     font-size: 1.2rem;
-    margin: 1rem;
-    color: #2B4C7E;
+    margin: 1rem 0;
+    color: #2B4C7E; /* azul escuro */
 }
 
-.card p {
-    margin: 0 1rem 1rem;
+.destaques p { /* texto das notícias */
     font-size: 0.95rem;
     color: #606D80; /* cinza azulado */
+    margin-bottom: 1rem;
 }
 
-.card a {
+.destaques a { /* botão das notícias */
     display: inline-block;
-    margin: 0 1rem 1rem;
     padding: 0.5rem 1rem;
     background: #567EBB; /* azul médio */
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9rem;
-    transition: background 0.3s;
 }
 
-.card a:hover {
-    background: #2B4C7E; /* azul escuro */
+/* ========== IMAGENS ESPECÍFICAS DA PÁGINA INICIAL ========== */
+#IMGIA1, #IMGGAMES1, #IMGCIBER1 {
+    width: 90%;            /* ocupa 90% do container */
+    max-width: 400px;      /* limite maximo de tamanho */
+    height: auto;          /* mantém proporção original */
+    object-fit: cover;     /* corta proporcionalmente */
+    display: block;
+    margin: 10px auto;     /* centraliza horizontal */
+    border-radius: 12px;   /* bordas arredondadas */
 }
 
-/* PÁGINAS DE NOTÍCIA */
-.noticia {
+/* ========== SEÇÕES INTERNAS ========== */
+.ultimas ul { /* listas internas */
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+.ultimas a { /* links internos */
+    color: #2B4C7E;
+    text-decoration: none;
+}
+
+.foco .grid-foco { /* grid de foco */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ========== PÁGINAS DE NOTÍCIA ========== */
+.noticia { /* container da notícia */
     max-width: 900px;
     margin: auto;
     background: #fff;
@@ -120,27 +115,27 @@ section {
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
 
-.noticia h1 {
+.noticia h1 { /* título da notícia */
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #2B4C7E;
 }
 
-.noticia img {
+.noticia img { /* imagens da notícia */
     width: 100%;
     max-height: 350px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 1rem;
 }
 
-.noticia p {
+.noticia p { /* texto da notícia */
     margin-bottom: 1rem;
     text-align: justify;
     color: #1F1F20;
 }
 
-.noticia a {
+.noticia a { /* botão da notícia */
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -149,18 +144,12 @@ section {
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9rem;
-    transition: background 0.3s;
-}
-
-.noticia a:hover {
-    background: #606D80;
 }
 
 /* ========== RODAPÉ ========== */
-footer {
+footer { /* barra inferior */
     background: #1F1F20;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    font-size: 0.9rem;
 }
