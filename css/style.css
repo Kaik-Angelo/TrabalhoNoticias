@@ -1,53 +1,61 @@
-/* ========== ESTILO GLOBAL ========== */
-* { /* zera margens e padding e define box-sizing */
+/* ====== ESTILO GLOBAL ====== */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body { /* fundo, texto padrão e fonte */
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* fonte padrão */
-    background-color: #DCE0E6; /* cinza claro */
-    color: #1F1F20; /* quase preto */
-    line-height: 1.6; /* espaçamento do texto */
+html, body {
+    height: 100%;
 }
 
-/*     CABEÇALHO        */
-header { /* barra do topo */
-    background: #1F1F20; /* preto */
-    color: #fff; /* letras brancas */
-    padding: 1rem 2rem;
-    display: flex; /* itens lado a lado */
-    align-items: center; /* centraliza vertical */
-    justify-content: space-between; /* separa título e links */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #DCE0E6;
+    color: #1F1F20;
+    line-height: 1.6;
 }
 
-header h1 { /* título principal */
-    font-size: 1.8rem;
-    color: #567EBB; /* azul médio */
-}
-.subtitulo{
-     text-align: center;
-}
-header nav a { /* links do menu */
+main { flex: 1; }
+
+/* ====== CABEÇALHO ====== */
+header {
+    background: #1F1F20;
     color: #fff;
-    text-decoration: none; /* tira sublinhado */
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 { font-size: 1.8rem; color: #567EBB; }
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
     margin-left: 1.5rem;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
-/* ========== CONTEÚDO PRINCIPAL ========== */
-section { padding: 2rem; } /* espaçamento interno */
+header nav a:hover { color: #2B4C7E; }
 
-/* GRID DESTAQUES (notícias iniciais) */
-.destaques { /* container de destaques */
+/* ====== INTRO ====== */
+.intro { text-align: center; margin-bottom: 2rem; }
+.subtitulo { text-align: center; margin-top: 1rem; }
+
+/* ====== DESTAQUES ====== */
+.destaques {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* colunas adaptáveis */
-    gap: 1.5rem; /* espaço entre blocos */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
     margin-top: 1rem;
 }
 
-.destaques section { /* cada bloco de notícia */
+.destaques section {
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
@@ -55,87 +63,85 @@ section { padding: 2rem; } /* espaçamento interno */
     text-align: center;
 }
 
-.destaques h3 { /* título das notícias */
-    font-size: 1.2rem;
-    margin: 1rem 0;
-    color: #2B4C7E; /* azul escuro */
-}
-
-.destaques p { /* texto das notícias */
-    font-size: 0.95rem;
-    color: #606D80; /* cinza azulado */
-    margin-bottom: 1rem;
-}
-
-.destaques a { /* botão das notícias */
+.destaques h3 { font-size: 1.2rem; margin: 1rem 0; color: #2B4C7E; }
+.destaques p { font-size: 0.95rem; color: #606D80; margin-bottom: 1rem; }
+.destaques a {
     display: inline-block;
     padding: 0.5rem 1rem;
-    background: #567EBB; /* azul médio */
+    background: #567EBB;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9rem;
+    transition: background 0.3s;
 }
 
-/* ========== IMAGENS ESPECÍFICAS DA PÁGINA INICIAL ========== */
+.destaques a:hover { background: #2B4C7E; }
+
+/* ====== CARROSSEL ====== */
+.carrossel {
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 12px;
+}
+
+.slide.ativo { display: block; }
+
+/* ====== IMAGENS DA PÁGINA INICIAL ====== */
 #IMGIA1, #IMGGAMES1, #IMGCIBER1 {
-    width: 90%;            /* ocupa 90% do container */
-    max-width: 400px;      /* limite maximo de tamanho */
-    height: auto;          /* mantém proporção original */
-    object-fit: cover;     /* corta proporcionalmente */
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
     display: block;
-    margin: 10px auto;     /* centraliza horizontal */
-    border-radius: 12px;   /* bordas arredondadas */
+    margin: 10px auto;
+    border-radius: 12px;
 }
 
-/* ========== SEÇÕES INTERNAS ========== */
-.ultimas ul { /* listas internas */
-    list-style: disc;
-    margin-left: 2rem;
-}
-
-.ultimas a { /* links internos */
-    color: #2B4C7E;
-    text-decoration: none;
-}
-
-.foco .grid-foco { /* grid de foco */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-/* ========== PÁGINAS DE NOTÍCIA ========== */
-.noticia { /* container da notícia */
+/* ====== PÁGINAS DE NOTÍCIA ====== */
+.noticia {
     max-width: 900px;
     margin: auto;
     background: #fff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    text-align: center; /* centraliza conteúdo */
 }
 
-.noticia h1 { /* título da notícia */
+.noticia h1 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: #2B4C7E;
 }
 
-.noticia img { /* imagens da notícia */
-    width: 100%;
-    max-height: 350px;
-    object-fit: cover;
+.noticia img {
+    width: 80%;        /* aumenta um pouco */
+    max-width: 550px;  /* aumenta limite máximo */
+    height: 300px;     /* altura retangular um pouco maior */
+    object-fit: cover;  /* mantém proporção cortando apenas o excesso */
     border-radius: 8px;
     margin-bottom: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* centraliza a imagem */
 }
 
-.noticia p { /* texto da notícia */
+.noticia p {
     margin-bottom: 1rem;
     text-align: justify;
     color: #1F1F20;
 }
 
-.noticia a { /* botão da notícia */
+.noticia a {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
@@ -144,12 +150,16 @@ section { padding: 2rem; } /* espaçamento interno */
     text-decoration: none;
     border-radius: 5px;
     font-size: 0.9rem;
+    transition: background 0.3s;
 }
 
-/* ========== RODAPÉ ========== */
-footer { /* barra inferior */
+.noticia a:hover { background: #606D80; }
+
+/* ====== RODAPÉ ====== */
+footer {
     background: #1F1F20;
     color: #fff;
     text-align: center;
     padding: 1rem;
+    font-size: 0.9rem;
 }
